@@ -31,6 +31,14 @@ class ExtendList(list):
     def __ne__(self, other):
         return ExtendList.average(self.lst) != ExtendList.average(other.lst)
 
+    @staticmethod
+    def NextVal(el):
+        for val in el.lst:
+            try:
+                yield float(val)
+            except ValueError:
+                yield val
+
 
 # A = ExtendList([1, 2, 3, 4, 5, 6, 7])
 # B = ExtendList([1, 2, 4, 6, 8, 10, 12, 14, 16])
