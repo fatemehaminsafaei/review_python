@@ -1,30 +1,19 @@
-class Node:
-    def __init__(self,data):
-        self.data = data
-        self.next = None
-class Solution:
-    def display(self,head):
-        current = head
-        while current:
-            print(current.data,end=' ')
-            current = current.next
+#What are lists and tuples?
+# What is the key difference between the two?
+#The key difference between the two is that while lists are mutable,
+# tuples on the other hand are immutable objects.
+# This means that lists can be modified, appended or sliced on-the-go
+# but tuples remain constant and cannot be modified in any manner.
+# You can run the following example on Python IDLE to confirm the difference
 
-    def insert(self,head,data):
-        temp = Node(data)#call a new empty node with data and address as null
-        if head is None:#check if this is the first node if yes it means copy the data part in the head and return it
-            head = temp
-            return head
-        current_pos=head #else take the a variable current_post and point it to head
-        while current_pos.next is not None:#travel through the list untill the last node of the list
-            current_pos = current_pos.next#move your temporaray current position to last node
-        current_pos.next=temp#in the last node copy the address of the newly created data
-        return head#return the head first
-    #Complete this method
+my_tuple = ('sara', 6, 5, 0.97)
+my_list = ['sara', 6, 5, 0.97]
 
-mylist= Solution()
-T=int(input())
-head=None
-for i in range(T):
-    data=int(input())
-    head=mylist.insert(head,data)
-mylist.display(head);
+print(my_tuple[0])     # output => 'sara'
+print(my_list[0])     # output => 'sara'
+
+my_tuple[0] = 'ansh'    # modifying tuple => throws an error
+my_list[0] = 'ansh'    # modifying list => list modified
+
+print(my_tuple[0])     # output => 'sara'
+print(my_list[0])     # output => 'ansh'
