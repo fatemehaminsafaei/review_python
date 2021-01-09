@@ -4,7 +4,6 @@
 x = [1, 0, False]
 print(any(x))
 
-
 y = [0, False, 0]
 print(any(y))
 
@@ -14,5 +13,5 @@ print(any(y))
 x = [1, 0, True]
 print(all(x))
 
-y= [True, 1, 1]
+y = [True, 1, 1]
 print(all(y))
