@@ -28,3 +28,16 @@ emp SERIAL,
 prj SERIAL ,
 FOREIGN KEY(emp) REFERENCES employee(employee_id),
 FOREIGN KEY (prj) REFERENCES project(id));
+
+-- #INSERT row in tables
+
+INSERT INTO department(department_name,dep_ID) VALUES
+('research' , '1');
+INSERT INTO department(department_name,dep_ID) VALUES
+('python' , '2');
+INSERT INTO department(department_name,dep_ID) VALUES
+('raact' , '3');
+INSERT INTO department(department_name,dep_ID) VALUES
+('javascript' , '4');
+INSERT INTO department(department_name,dep_ID) VALUES
+('php' , '5');
