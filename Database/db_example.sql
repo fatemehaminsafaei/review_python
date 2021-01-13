@@ -24,10 +24,8 @@ duration INT ,
 PRIMARY KEY(project_number, id));
 
 CREATE TABLE emp_workson_prj(hourlysalary INT,
-emp SERIAL,
-prj SERIAL ,
-FOREIGN KEY(emp) REFERENCES employee(employee_id),
-FOREIGN KEY (prj) REFERENCES project(id));
+employee_id SERIAL,
+project_number SERIAL);
 
 -- #INSERT row in tables department
 
@@ -63,3 +61,26 @@ INSERT INTO project(project_number,id, name,duration ) VALUES('31' , '21', 'tran
 INSERT INTO project(project_number,id, name,duration ) VALUES('32' , '22', 'website', '15');
 INSERT INTO project(project_number,id, name,duration ) VALUES('33' , '23', 'design', '11');
 INSERT INTO project(project_number,id, name,duration ) VALUES('34' , '24', 'database', '18');
+
+-- #INSERT row in tables emp_workson_prj
+INSERT INTO emp_workson_prj(hourlysalary, employee_id, project_number ) VALUES('5000000', '20' , '30');
+INSERT INTO emp_workson_prj(hourlysalary, employee_id, project_number ) VALUES('6000000', '21' , '31');
+INSERT INTO emp_workson_prj(hourlysalary, employee_id, project_number ) VALUES('7000000', '22' , '32');
+INSERT INTO emp_workson_prj(hourlysalary, employee_id, project_number ) VALUES('8000000', '23' , '33');
+INSERT INTO emp_workson_prj(hourlysalary, employee_id, project_number ) VALUES('9000000', '24' , '34');
+
+
+-- select count of employee's project
+SELECT COUNT(*) FROM project INNER JOIN employee ON id=employee_id WHERE employee_name='fateme1';
+
+
+
+-- select
+SELECT employee_id FROM emp_workson_prj WHERE hourlysalary = (SELECT MAX(hourlysalary) FROM emp_workson_prj);
+SELECT hourlysalary  FROM emp_workson_prj WHERE hourlysalary = (SELECT MAX(hourlysalary) FROM emp_workson_prj);
+
+
+-- join
+SELECT name FROM project INNER JOIN employee ON (id = employee_id) WHERE (employee_name= 'fateme3');
+
+
