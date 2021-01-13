@@ -84,3 +84,33 @@ SELECT hourlysalary  FROM emp_workson_prj WHERE hourlysalary = (SELECT MAX(hourl
 SELECT name FROM project INNER JOIN employee ON (id = employee_id) WHERE (employee_name= 'fateme3');
 
 
+SELECT name , sum(project_number) FROM project INNER JOIN employee(employee_name)
+GROUP BY name ORDER BY project_number;
+
+
+-- SELECT
+-- 	name,project_number,count(*) FROM project,employee
+-- GROUP BY
+-- 	project_number,
+-- 	name
+-- ORDER BY
+--     name;
+
+-- employee name with number of projects
+SELECT employee_name AS "employee Name",
+COUNT(*) AS "Nunmber of project"
+FROM project
+INNER JOIN employee
+ON employee_name = 'fateme3'
+GROUP BY project_number, employee_name
+ORDER BY employee_name;
+
+
+-- 5
+SELECT name, department FROM
+(project INNER JOIN employee ON id=employee_id )
+INNER JOIN department ON dep_id=dep_id;
+
+-- 6
+SELECT name FROM (project INNER JOIN employee ON id=employee_id )
+INNER JOIN supervisor ON dep_id=dep_id WHERE superviser_name='aminsafaei1';

@@ -92,3 +92,63 @@ postgres=# SELECT name FROM project INNER JOIN employee ON (id = employee_id) WH
 
 *_______________________________________________________________________________________________________________________
 *-----------------------------------------------------------------------------------------------------------------------
+ employee Name | Nunmber of project
+---------------+--------------------
+ fateme3       |                  1
+ fateme3       |                  1
+ fateme3       |                  1
+ fateme3       |                  1
+ fateme3       |                  1
+(5 rows)
+
+
+
+_______________________________________________________________________________________________________________________
+*-----------------------------------------------------------------------------------------------------------------------
+#5
+       name       |   department
+------------------+----------------
+ deeplearning     | (research,1)
+ transferlearning | (research,1)
+ website          | (research,1)
+ design           | (research,1)
+ database         | (research,1)
+ deeplearning     | (python,2)
+ transferlearning | (python,2)
+ website          | (python,2)
+ design           | (python,2)
+ database         | (python,2)
+ deeplearning     | (raact,3)
+ transferlearning | (raact,3)
+ website          | (raact,3)
+ design           | (raact,3)
+ database         | (raact,3)
+ deeplearning     | (javascript,4)
+ transferlearning | (javascript,4)
+ website          | (javascript,4)
+ design           | (javascript,4)
+ database         | (javascript,4)
+ deeplearning     | (php,5)
+ transferlearning | (php,5)
+ website          | (php,5)
+ design           | (php,5)
+ database         | (php,5)
+
+
+
+ _______________________________________________________________________________________________________________________
+*-----------------------------------------------------------------------------------------------------------------------
+#6
+       name
+------------------
+ deeplearning
+ transferlearning
+ website
+ design
+ database
+(5 rows)
+
+
+*_______________________________________________________________________________________________________________________
+*-----------------------------------------------------------------------------------------------------------------------
+#7
