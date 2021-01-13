@@ -8,7 +8,7 @@ PRIMARY KEY(department_name, dep_ID));
 CREATE TABLE supervisor(
 superviser_name VARCHAR(100) NOT NULL,
 superviser_numbers INT NOT NULL,
-dep_ID VARCHAR(50),
+dep_ID SERILAL,
 PRIMARY KEY(superviser_name));
 
 CREATE TABLE employee( employee_number INT NOT NULL,
@@ -89,12 +89,12 @@ GROUP BY name ORDER BY project_number;
 
 
 -- SELECT
--- 	name,project_number,count(*) FROM project,employee
+-- 	employee_name,project_number,count(*) FROM employee,project
 -- GROUP BY
 -- 	project_number,
--- 	name
+-- 	employee_name
 -- ORDER BY
---     name;
+--     employee_name = 'fateme1';
 
 -- employee name with number of projects
 SELECT employee_name AS "employee Name",
@@ -114,3 +114,12 @@ INNER JOIN department ON dep_id=dep_id;
 -- 6
 SELECT name FROM (project INNER JOIN employee ON id=employee_id )
 INNER JOIN supervisor ON dep_id=dep_id WHERE superviser_name='aminsafaei1';
+
+
+-- 7
+SELECT superviser_name AS "supervisor_name", COUNT(*) AS "Nunmber of project"FROM project INNER JOIN
+( employee INNER JOIN supervisor ON employee.dep_id=supervisor.dep_id)
+ON id=employee_id GROUP BY project_number, superviser_name ORDER BY superviser_name;
+
+-- 8
+SELECT SUM(duration) FROM project INNER JOIN (employee INNER JOIN supervisor ON employee.dep_ID=supervisor.dep_ID ) ON id=employee_id;
