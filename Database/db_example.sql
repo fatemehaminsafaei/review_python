@@ -6,10 +6,10 @@ dep_ID SERIAL NOT NULL,
 PRIMARY KEY(department_name, dep_ID));
 
 CREATE TABLE supervisor(
-supervisor_name VARCHAR(100) NOT NULL,
-supervisor_numbers INT NOT NULL,
+superviser_name VARCHAR(100) NOT NULL,
+superviser_numbers INT NOT NULL,
 dep_ID VARCHAR(50),
-PRIMARY KEY(supervisor_name));
+PRIMARY KEY(superviser_name));
 
 CREATE TABLE employee( employee_number INT NOT NULL,
 employee_name VARCHAR(50) NOT NULL ,
@@ -44,4 +44,8 @@ INSERT INTO department(department_name,dep_ID) VALUES
 
 -- #INSERT row in tables supervisor
 
-INSERT INTO supervisor(supervisor_name,supervisor_numbers,dep_ID)VALUES('aminsafaei1' , '10', '1');
+INSERT INTO supervisor(superviser_name,superviser_numbers,dep_ID)VALUES('aminsafaei1' , '10', '1');
+INSERT INTO supervisor(superviser_name,superviser_numbers,dep_ID)VALUES('aminsafaei2' , '11', '2');
+INSERT INTO supervisor(superviser_name,superviser_numbers,dep_ID)VALUES('aminsafaei3' , '12', '3');
+INSERT INTO supervisor(superviser_name,superviser_numbers,dep_ID)VALUES('aminsafaei4' , '13', '3');
+INSERT INTO supervisor(superviser_name,superviser_numbers,dep_ID)VALUES('aminsafaei5' , '14', '5');
