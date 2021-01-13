@@ -18,3 +18,25 @@ postgres=# SELECT * FROM supervisor;
  aminsafaei4     |                 13 | 3
  aminsafaei5     |                 14 | 5
 (5 rows)
+
+
+postgres=# SELECT * FROM employee;
+ employee_number | employee_name | employee_id | prj_id
+-----------------+---------------+-------------+--------
+              20 | fateme1       |          20 |      6
+              21 | fateme2       |          21 |      7
+              22 | fateme3       |          22 |      8
+              23 | fateme4       |          23 |      9
+              24 | fateme5       |          24 |     10
+(5 rows)
+
+
+postgres=# SELECT * FROM project;
+ project_number | id |       name       | duration
+----------------+----+------------------+----------
+             30 | 20 | deeplearning     |       12
+             31 | 21 | transferlearning |        8
+             32 | 22 | website          |       15
+             33 | 23 | design           |       11
+             34 | 24 | database         |       18
+(5 rows)

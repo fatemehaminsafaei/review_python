@@ -49,3 +49,17 @@ INSERT INTO supervisor(superviser_name,superviser_numbers,dep_ID)VALUES('aminsaf
 INSERT INTO supervisor(superviser_name,superviser_numbers,dep_ID)VALUES('aminsafaei3' , '12', '3');
 INSERT INTO supervisor(superviser_name,superviser_numbers,dep_ID)VALUES('aminsafaei4' , '13', '3');
 INSERT INTO supervisor(superviser_name,superviser_numbers,dep_ID)VALUES('aminsafaei5' , '14', '5');
+
+-- #INSERT row in tables employee
+INSERT INTO employee(employee_number, employee_name, employee_id) VALUES('20' , 'fateme1', '20');
+INSERT INTO employee(employee_number, employee_name, employee_id) VALUES('21' , 'fateme2', '21');
+INSERT INTO employee(employee_number, employee_name, employee_id) VALUES('22' , 'fateme3', '22');
+INSERT INTO employee(employee_number, employee_name, employee_id) VALUES('23' , 'fateme4', '23');
+INSERT INTO employee(employee_number, employee_name, employee_id) VALUES('24' , 'fateme5', '24');
+
+-- #INSERT row in tables project
+INSERT INTO project(project_number,id, name,duration ) VALUES('30' , '20', 'deeplearning', '12');
+INSERT INTO project(project_number,id, name,duration ) VALUES('31' , '21', 'transferlearning', '8');
+INSERT INTO project(project_number,id, name,duration ) VALUES('32' , '22', 'website', '15');
+INSERT INTO project(project_number,id, name,duration ) VALUES('33' , '23', 'design', '11');
+INSERT INTO project(project_number,id, name,duration ) VALUES('34' , '24', 'database', '18');
