@@ -29,7 +29,7 @@ prj SERIAL ,
 FOREIGN KEY(emp) REFERENCES employee(employee_id),
 FOREIGN KEY (prj) REFERENCES project(id));
 
--- #INSERT row in tables
+-- #INSERT row in tables department
 
 INSERT INTO department(department_name,dep_ID) VALUES
 ('research' , '1');
@@ -41,3 +41,7 @@ INSERT INTO department(department_name,dep_ID) VALUES
 ('javascript' , '4');
 INSERT INTO department(department_name,dep_ID) VALUES
 ('php' , '5');
+
+-- #INSERT row in tables supervisor
+
+INSERT INTO supervisor(supervisor_name,supervisor_numbers,dep_ID)VALUES('aminsafaei1' , '10', '1');
