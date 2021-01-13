@@ -2,6 +2,7 @@ import sys
 
 
 class Calculator:
+    
     def __init__(self):
         self.number1 = 0
         self.number2 = 0
