@@ -76,7 +76,7 @@ SELECT COUNT(*) FROM project INNER JOIN employee ON id=employee_id WHERE employe
 
 
 -- select
-SELECT employee_id FROM emp_workson_prj WHERE hourlysalary = (SELECT MAX(hourlysalary) FROM emp_workson_prj);
+-- SELECT employee_id FROM emp_workson_prj WHERE hourlysalary = (SELECT MAX(hourlysalary) FROM emp_workson_prj);
 SELECT hourlysalary  FROM emp_workson_prj WHERE hourlysalary = (SELECT MAX(hourlysalary) FROM emp_workson_prj);
 
 
@@ -115,11 +115,32 @@ INNER JOIN department ON dep_id=dep_id;
 SELECT name FROM (project INNER JOIN employee ON id=employee_id )
 INNER JOIN supervisor ON dep_id=dep_id WHERE superviser_name='aminsafaei1';
 
+-- select distinct project_name from project, emp_workson_prj, employee_department ed , supervisor s where project_id=prj_fk and emp_fk=employee_number and ed.department_name=s.department_name and supervisor_name='Modiri';
+
+-- select distinct project_name from project join emp_workson_prj on project_id=prj_fk join employee_department ed on emp_fk=employee_number join supervisor s on ed.department_name=s.department_name where supervisor_name='Modiri';
 
 -- 7
 SELECT superviser_name AS "supervisor_name", COUNT(*) AS "Nunmber of project"FROM project INNER JOIN
 ( employee INNER JOIN supervisor ON employee.dep_id=supervisor.dep_id)
 ON id=employee_id GROUP BY project_number, superviser_name ORDER BY superviser_name;
 
+-- select count(*) as number_of_project from supervisor inner join department_employee using(department_id) inner join project_employee using(employee_id) inner join project on project_id=project.id where supervisor.f_name='javad' and supervisor.l_name='asghari';
+-- SELECT DISTINCT supervisor.sur_name as supervisor,project.name as project_name,duration as project_duration
+-- from dep_prj
+-- join department on dep_prj.dep_fk=department.id
+-- join project on dep_prj.prj_fk=project.id
+-- join supervisor on  department.supervisor_fk=supervisor.id
+
+-- select count(distinct prj_fk) count, supervisor_name from emp_workson_prj join employee_department ed on emp_fk=employee_number join supervisor s on ed.department_name=s.department_name group by supervisor_name order by count;
+
 -- 8
 SELECT SUM(duration) FROM project INNER JOIN (employee INNER JOIN supervisor ON employee.dep_ID=supervisor.dep_ID ) ON id=employee_id;
+
+-- select supervisor.supervisor_name,sum(duration)
+-- FROM supervisor join(SELECT DISTINCT employee_project.project_id,duration,Supervisor_id
+-- from employee_project join project on project.project_number = employee_project.project_id
+-- join Employee_Department on employee_project.employee_id = Employee_Department.employee_id
+-- join department on department.department_number = Employee_Department.department_id)c
+-- on supervisor.supervisor_number = c.supervisor_id
+-- group by supervisor.supervisor_number,supervisor.supervisor_name
+-- HAVING count(project_id)>2
